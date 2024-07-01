@@ -1,22 +1,44 @@
 package com.example.myapplication
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
+import android.text.Editable
+import android.text.TextWatcher
+import android.util.Log
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.EditText
+import com.example.myapplication.databinding.FragmentOtpBinding
 
-class MainActivity : AppCompatActivity() {
+
+class OtpFragment :  Fragment() {
+
+
+    private  var _binding : FragmentOtpBinding? = null
+    private val binding get() = _binding!!
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
 
+    }
 
-       /* val otpEditTexts = arrayOf(
-            findViewById<EditText>(R.id.et_otp_1),
-            findViewById<EditText>(R.id.et_otp_2),
-            findViewById<EditText>(R.id.et_otp_3),
-            findViewById<EditText>(R.id.et_otp_4),
-            findViewById<EditText>(R.id.et_otp_5),
-            findViewById<EditText>(R.id.et_otp_6)
-        )
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        _binding = FragmentOtpBinding.inflate(inflater, container, false)
+        return binding.root
+
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        setupViews()
+    }
+
+    private fun setupViews()= with(binding){
+        val otpEditTexts = arrayOf(etOtp1, etOtp2, etOtp3, etOtp4, etOtp5, etOtp6)
 
         for (i in otpEditTexts.indices) {
             otpEditTexts[i].addTextChangedListener(object : TextWatcher {
@@ -43,7 +65,13 @@ class MainActivity : AppCompatActivity() {
                     Log.d("Otp", "GetOptAfter ${s}")
                 }
             })
-        }*/
+         }
 
+        }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
+
 }
