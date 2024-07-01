@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_home"
-    app:startDestination="@id/otpFragment">
+    app:startDestination="@id/menuFragment">
 
 
     <fragment
@@ -16,4 +16,13 @@
         android:name="com.example.myapplication.SpinnerFragment"
         android:label="fragment_spinner"
         tools:layout="@layout/fragment_spinner" />
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="com.example.myapplication.MenuFragment"
+        android:label="fragment_menu"
+        tools:layout="@layout/fragment_menu" >
+        <action
+            android:id="@+id/action_menuFragment_to_otpFragment"
+            app:destination="@id/otpFragment" />
+    </fragment>
 </navigation>
