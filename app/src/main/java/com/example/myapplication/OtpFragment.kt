@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
+import androidx.navigation.fragment.findNavController
 import com.example.myapplication.databinding.FragmentOtpBinding
 import com.google.android.material.bottomsheet.BottomSheetDialog
 
@@ -38,6 +39,10 @@ class OtpFragment :  Fragment() {
     }
 
     private fun setupViews()= with(binding){
+        toolbarOtp.setTitle("Codigo Otp")
+        toolbarOtp.setOnClickBack {
+            findNavController().popBackStack()
+        }
         val otpEditTexts = arrayOf(etOtp1, etOtp2, etOtp3, etOtp4, etOtp5, etOtp6)
 
         for (i in otpEditTexts.indices) {
@@ -79,9 +84,11 @@ class OtpFragment :  Fragment() {
                  title = "Ejemplo "
              ).show(childFragmentManager, "")
 
-            //val buttonShwwtDialog = BottomSheetDialog(requireContext(), R.style.MyBottomSheetDialog)
-            //buttonShwwtDialog.setContentView(R.layout.bottomsheet)
-            //buttonShwwtDialog.show()
+          /*  val buttonShwwtDialog = BottomSheetDialog(requireContext(), R.style.MyBottomSheetDialog)
+            buttonShwwtDialog.setContentView(R.layout.bottomsheet)
+            buttonShwwtDialog.show()*/
+
+
 
         }
 

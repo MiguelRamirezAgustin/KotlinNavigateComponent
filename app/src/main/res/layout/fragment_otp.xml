@@ -7,10 +7,15 @@
     android:orientation="vertical"
     tools:context=".OtpFragment">
 
+    <com.example.myapplication.component.toolbarComponent
+        android:id="@+id/toolbarOtp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="150dp"
         android:gravity="center"
         android:orientation="horizontal">
 
@@ -81,7 +86,7 @@
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:text="Show Dialog"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="80dp"
         />
 
 </LinearLayout>
