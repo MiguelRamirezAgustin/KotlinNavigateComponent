@@ -4,16 +4,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     tools:context=".OtpFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
         android:gravity="center"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:orientation="horizontal">
 
         <EditText
             android:id="@+id/et_otp_1"
@@ -75,5 +74,14 @@
             android:maxLength="1"
             android:textSize="18sp"/>
     </LinearLayout>
+
+    <Button
+        android:layout_gravity="center"
+        android:id="@+id/btnShowDialog"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:text="Show Dialog"
+        android:layout_marginTop="50dp"
+        />
 
 </LinearLayout>

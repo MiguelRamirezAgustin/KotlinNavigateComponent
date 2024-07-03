@@ -10,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import com.example.myapplication.databinding.FragmentOtpBinding
+import com.google.android.material.bottomsheet.BottomSheetDialog
 
 
 class OtpFragment :  Fragment() {
@@ -20,7 +21,6 @@ class OtpFragment :  Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
     }
 
     override fun onCreateView(
@@ -66,6 +66,24 @@ class OtpFragment :  Fragment() {
                 }
             })
          }
+
+        btnShowDialog.setOnClickListener {
+
+             DialogSheet.newInstances(
+                 callback = object :ResulDialog {
+                     override fun onReculDialog(showDialog: Boolean) {
+                      Log.d("Valordialgo", "$showDialog")
+                     }
+
+                 },
+                 title = "Ejemplo "
+             ).show(childFragmentManager, "")
+
+            //val buttonShwwtDialog = BottomSheetDialog(requireContext(), R.style.MyBottomSheetDialog)
+            //buttonShwwtDialog.setContentView(R.layout.bottomsheet)
+            //buttonShwwtDialog.show()
+
+        }
 
         }
 
